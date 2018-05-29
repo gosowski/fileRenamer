@@ -13,8 +13,12 @@ try:
   fileCounter = 0
 
   for filename in oldNames:
-    os.rename(path+'/'+filename, path+'/'+newName+str(counter))
-    print("Renaming: "+filename+" to: "+newName+str(counter))
+    name, ext = os.path.splitext(path+'/'+filename)
+    os.rename(path+'/'+filename, path+'/'+newName+str(counter)+ext)
+    
+
+    print("Renaming: "+filename+" to: "+newName+str(counter)+ext)
+
     fileCounter+=1
     counter+=1
 
