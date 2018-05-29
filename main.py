@@ -1,5 +1,12 @@
 import os
 import sys
+import argparse 
+
+parser = argparse.ArgumentParser(usage=sys.argv[0]+" [-n] name [-c] counter")
+parser.add_argument('-n', '--name', help="New name of the files")
+parser.add_argument('-c', '-counter', help='Number from which program starts adding to name ')
+
+args = parser.parse_args()
 
 try:
   oldNames = os.listdir(sys.argv[1])
