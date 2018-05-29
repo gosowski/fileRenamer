@@ -10,12 +10,15 @@ try:
   newName = sys.argv[2] + "_"
   counter = int(sys.argv[3])
   path = sys.argv[1]
+  fileCounter = 0
 
   for filename in oldNames:
     os.rename(path+'/'+filename, path+'/'+newName+str(counter))
+    print("Renaming: "+filename+" to: "+newName+str(counter))
+    fileCounter+=1
     counter+=1
 
-  print("Done")
+  print(str(fileCounter)+" files renaming successfully done!")
 
 except OSError:
   print("Cannot open "+sys.argv[1])
