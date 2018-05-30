@@ -8,6 +8,8 @@ parser.add_argument('-c', '-counter', help='Number from which program starts add
 
 args = parser.parse_args()
 
+#comment
+
 try:
   oldNames = os.listdir(sys.argv[1])
 
